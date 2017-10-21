@@ -1,6 +1,12 @@
-from flask import Flask
-app = Flask(__name__)
+import flask
+app = flask.Flask(__name__)
+ 
+gloabalObjects = [{'name': 'Test1', 'number': 5342}, {'name': "Test2", 'number': 1112}]
 
-@app.route('/')
+
+@app.route('/',  methods=['GET', 'POST'])
 def hello_world():
-    return 'Hello, World!'
+    context = {}
+    context['records'] = gloabalObjects
+    return flask.render_template("index.html", **context)
+

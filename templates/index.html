@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Index Exploring
+	</title>
+</head>
+  <div>
+  </table>
+  {% for record in records %}
+  <table style="width:10%">
+      <tr>
+        <td>
+          {{record.name}}
+        </td>
+        <td>
+          {{record.number}}
+        </td>
+      </tr>
+  </table>
+  {% endfor %}
+  </div>
+</html>
